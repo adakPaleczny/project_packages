@@ -7,7 +7,7 @@ class STM32HAL(ConanFile):
     name = "stm32g4_hal_driver"
     license = "STMicroelectronics BSD-3-Clause"
     author = "Adam Paleczny"
-    description = "STM32H7 HAL drivers (e.g., GPIO, UART, etc.)"
+    description = "STM32G4 HAL drivers (e.g., GPIO, UART, etc.)"
     settings = "os", "arch", "compiler", "build_type"
     package_type = "header-library"
     options = {"shared": [True, False]}
