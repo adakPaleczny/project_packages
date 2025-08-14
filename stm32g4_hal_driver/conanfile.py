@@ -1,6 +1,6 @@
 import os
 from conan import ConanFile
-from conan.tools.files import copy, load
+from conan.tools.files import copy, load, get
 
 
 class STM32HAL(ConanFile):
@@ -32,6 +32,10 @@ class STM32HAL(ConanFile):
         pass
 
     def package(self):
+        get(self,
+            url="https://github.com/STMicroelectronics/stm32g4xx-hal-driver/archive/refs/tags/v1.2.5.tar.gz",
+            strip_root=True)
+        
         src_root = self.source_folder
 
         copy(self, "*", src=os.path.join(src_root, "Src"), dst=os.path.join(self.package_folder, "src"), keep_path=True)
